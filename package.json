@@ -1,0 +1,19 @@
+{
+  "name": "application",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:app": "pnpm --filter app dev",
+    "dev:api": "pnpm --filter api dev",
+    "dev": "concurrently \"pnpm run dev:app\" \"pnpm run dev:api\"",
+    "better-auth:generate": "pnpm dlx @better-auth/cli@latest generate --config packages/auth/server.ts --output packages/db/src/schemas/auth.ts",
+    "better-auth:migrate": "pnpm dlx @better-auth/cli@latest migrate --config packages/auth/server.ts --output packages/db/src/schemas/auth.ts",
+    "start:app": "pnpm --filter app start",
+    "start:api": "pnpm --filter api start"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.13",
+    "concurrently": "catalog:"
+  }
+}

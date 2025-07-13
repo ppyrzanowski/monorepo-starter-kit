@@ -1,0 +1,36 @@
+{
+  "name": "api",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "migrate": "pnpm --filter db run migrate",
+    "generate": "pnpm --filter db run generate",
+    "watch": "tsx watch --env-file=.env index.ts",
+    "dev": "pnpm run generate && dotenv -e .env -- concurrently \"pnpm run migrate\" \"pnpm run watch\"",
+    "start": "pnpm run generate && dotenv -e .env -- pnpm run migrate && tsx index.ts",
+    "email:dev": "email dev"
+  },
+  "engines": {
+    "node": "24.3.0"
+  },
+  "dependencies": {
+    "auth": "workspace:*",
+    "body-parser": "^1.20.3",
+    "concurrently": "catalog:",
+    "config": "workspace:*",
+    "cors": "^2.8.5",
+    "db": "workspace:*",
+    "dotenv-cli": "^8.0.0",
+    "express": "catalog:",
+    "helmet": "^8.0.0",
+    "stripe": "workspace:*",
+    "tsx": "^4.19.3",
+    "validator": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "catalog:",
+    "typescript": "^5.8.3"
+  }
+}
