@@ -3,17 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@10.13.1",
   "scripts": {
-    "dev:app": "pnpm --filter app dev",
-    "dev:api": "pnpm --filter api dev",
-    "dev": "concurrently \"pnpm run dev:app\" \"pnpm run dev:api\"",
+    "dev:app": "pnpm turbo --filter app dev",
+    "dev:api": "pnpm turbo --filter api dev",
+    "dev": "pnpm turbo dev",
     "better-auth:generate": "pnpm dlx @better-auth/cli@latest generate --config packages/auth/server.ts --output packages/db/src/schemas/auth.ts",
     "better-auth:migrate": "pnpm dlx @better-auth/cli@latest migrate --config packages/auth/server.ts --output packages/db/src/schemas/auth.ts",
-    "start:app": "pnpm --filter app start",
-    "start:api": "pnpm --filter api start"
+    "build": "pnpm turbo build",
+    "build:app": "pnpm turbo --filter app build",
+    "build:api": "pnpm turbo --filter api build"
   },
   "devDependencies": {
     "@types/node": "^24.0.13",
-    "concurrently": "catalog:"
+    "turbo": "^2.5.4"
   }
 }

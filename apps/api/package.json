@@ -3,11 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "migrate": "pnpm --filter db run migrate",
+    "migrate": "dotenv -e .env -- pnpm --filter db run migrate",
     "generate": "pnpm --filter db run generate",
     "watch": "tsx watch --env-file=.env index.ts",
-    "dev": "pnpm run generate && dotenv -e .env -- concurrently \"pnpm run migrate\" \"pnpm run watch\"",
-    "start": "pnpm run generate && dotenv -e .env -- pnpm run migrate && tsx index.ts",
+    "dev": "pnpm run generate && concurrently \"pnpm run migrate\" \"pnpm run watch\"",
+    "build": "pnpm run generate && pnpm run migrate && tsx index.ts",
     "email:dev": "email dev"
   },
   "engines": {

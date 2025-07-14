@@ -30,7 +30,7 @@ Execute the command below to start the servers
 
 ```
 
-pnpm run start
+pnpm run dev
 
 ```
 
