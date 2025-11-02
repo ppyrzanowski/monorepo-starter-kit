@@ -1,41 +1,28 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Default",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "composite": false,
-    "declaration": false,
-    "declarationMap": false,
-    "target": "es2020",   
-    "isolatedModules": true,              
-    "module": "commonjs",                
-    "moduleResolution": "node",                                                   
-    "moduleDetection": "force",
-    "esModuleInterop": true,                             
-    "forceConsistentCasingInFileNames": true,            
-    "strict": true,                                      
-    "noImplicitAny": true,                            
-    "strictNullChecks": true,                         
-    "strictFunctionTypes": true,                      
-    "strictPropertyInitialization": true,             
-    "alwaysStrict": true,                            
-    "noImplicitReturns": true,
-    "preserveWatchOutput": true,                         
-    "skipLibCheck": true,
-    "resolveJsonModule": true,         
-    "typeRoots": [ "./types" ],
-    "outDir": "./dist",                            
-    "baseUrl": ".",     
+    "composite": true,
+    "rootDir": ".",
+    "outDir": "dist",
+    "preserveWatchOutput": true,
+    "typeRoots": ["./types"],
+    "baseUrl": ".",
     "paths": {
       "~/lib/*": ["./src/lib/*"],
       "~/utils/*": ["./src/utils/*"],
       "#/emails/*": ["./emails/*"],
       "@/controller/*": ["./src/controller/*"],
-      "@/routes/*": ["./src/routes/*"],
-
-    }                                                                
+      "@/routes/*": ["./src/routes/*"]
+    }
   },
-  "include": ["**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"],
-
+  "references": [
+    { "path": "../../packages/auth" },
+    { "path": "../../packages/config" },
+    { "path": "../../packages/db" },
+    { "path": "../../packages/stripe" },
+    { "path": "../../packages/validator" }
+  ]
 }

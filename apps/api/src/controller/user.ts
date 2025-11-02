@@ -2,7 +2,7 @@
 import { Request, Response } from "express"
 /* APP */
 import { userSchema } from "validator"
-import { authentication } from "auth/server"
+import { authentication } from "auth"
 import { safeDbPromise, validatorDTO } from "validator"
 import { updateUserInformationByUserId } from "db"
 

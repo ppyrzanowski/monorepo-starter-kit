@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist",
+    "jsx": "react-jsx"
+  },
+  "include": ["src", "index.ts"],
+  "exclude": ["node_modules", "dist"],
+  "references": [
+    { "path": "../config" },
+    { "path": "../db" },
+    { "path": "../validator" }
+  ]
+}
+

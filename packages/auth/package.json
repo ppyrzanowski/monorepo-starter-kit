@@ -2,6 +2,11 @@
   "name": "auth",
   "version": "1.0.0",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b"
+  },
   "dependencies": {
     "express": "catalog:",
     "better-auth": "^1.2.12",
@@ -10,6 +15,7 @@
     "validator": "workspace:*"
   },
   "devDependencies": {
-    "@types/express": "catalog:"
+    "@types/express": "catalog:",
+    "typescript": "^5.8.3"
   }
 }
