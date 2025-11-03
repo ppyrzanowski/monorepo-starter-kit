@@ -22,6 +22,8 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "paths": {
+    }
   }
 }
 
