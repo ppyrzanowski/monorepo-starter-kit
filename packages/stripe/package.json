@@ -1,11 +1,12 @@
 {
   "name": "stripe",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -b"
+    "build": "rm -rf dist && tsc -p tsconfig.json"
   },
   "dependencies": {
     "stripe": "^18.3.0",
