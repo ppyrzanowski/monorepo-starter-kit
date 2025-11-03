@@ -1,6 +1,6 @@
 /* APP */
 import { createCustomerIdByUserId, getUserInformationByUserId } from "db"
-import { stripe } from "./stripe";
+import { stripe } from "./stripe.js";
 
 export const createOrGetCustomerIdByUserId = async ( userId: string ) => {
 

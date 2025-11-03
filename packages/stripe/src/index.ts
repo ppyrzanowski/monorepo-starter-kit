@@ -1,17 +1,17 @@
 export {
   webhook,
   verifyWebhook
-} from "./webhook"
-export { checkout } from "./checkout"
-export { getBillingPortalByCustomerId } from "./billing"
+} from "./webhook.js"
+export { checkout } from "./checkout.js"
+export { getBillingPortalByCustomerId } from "./billing.js"
 export {
   stripeSubscriptionEvents,
   earlyFraudEvents
-} from "./events"
+} from "./events.js"
 export {
   plans,
   findPlanByStripeId,
   findFreePlan
-} from "./plans"
-export { createOrGetCustomerIdByUserId } from "./queries"
-export { stripe } from "./stripe"
+} from "./plans.js"
+export { createOrGetCustomerIdByUserId } from "./queries.js"
+export { stripe } from "./stripe.js"

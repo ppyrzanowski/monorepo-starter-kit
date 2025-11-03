@@ -1,7 +1,7 @@
 /* LIBRARIES */
 import { fromPromise } from "neverthrow"
 /* APP */
-import { AppError } from "./error";
+import { AppError } from "./error.js";
 
 export const safeDbPromise = async <T>( query: Promise<T> ) => {
 

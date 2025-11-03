@@ -2,7 +2,7 @@
 import { Request } from "express";
 import { AnyZodObject, z, ZodType } from "zod";
 /* App */
-import { AppError } from "./error";
+import { AppError } from "./error.js";
 
 export type InferSchemaValues<T extends ZodType<any>> = z.infer<T>;
 
@@ -25,13 +25,13 @@ export const validatorDTO = async <T extends AnyZodObject>(
       path: issue.path.join('.'),
     }));
 
-    throw new AppError( 
+    throw new AppError(
       'validation_error',
       `${result.error.issues[0].message}. ${errors.map(e => ` ${e.path}: ${e.message} / `)}`
     );
-    
+
   }
 
   return result.data
- 
+
 };

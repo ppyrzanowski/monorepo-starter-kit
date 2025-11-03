@@ -1,5 +1,5 @@
 import { config } from "config";
-import { stripe } from "./stripe";
+import { stripe } from "./stripe.js";
 
 export const getBillingPortalByCustomerId = async ( customerId: string ) => {
   return await stripe.billingPortal.sessions.create(

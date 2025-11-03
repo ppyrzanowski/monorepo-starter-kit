@@ -1,6 +1,7 @@
 /* EXPRESS */
 import express from "express"
 import type { Express } from "express"
+
 /* LIBRARIES */
 import cors from "cors"
 import helmet from "helmet"
@@ -9,8 +10,8 @@ import { authHandler } from "auth/server"
 import { errorHandler } from "validator"
 
 /* APP */
-import { BodyParser } from "./lib/bodyParser"
-import { userRouter } from "./routes/user"
+import { BodyParser } from "./lib/bodyParser.js"
+import { userRouter } from "./routes/user.js"
 
 const app: Express = express();
 

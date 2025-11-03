@@ -1,4 +1,4 @@
-import { stripe } from "./stripe";
+import { stripe } from "./stripe.js";
 import { config } from "config";
 
 export const checkout = async ( { priceId, customerId } : { priceId: string, customerId: string } ) => {

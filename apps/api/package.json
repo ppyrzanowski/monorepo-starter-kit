@@ -7,7 +7,8 @@
     "generate": "pnpm --filter db run generate",
     "watch": "tsx watch --env-file=.env src/index.ts",
     "dev": "pnpm run generate && concurrently \"pnpm run migrate\" \"pnpm run watch\"",
-    "build": "rm -rf dist && tsc -b && tsc-alias -p tsconfig.json && node dist/src/index.js",
+    "build": "tsc -b && tsc-alias -p tsconfig.json",
+    "start": "node dist/index.js",
     "email:dev": "email dev"
   },
   "engines": {

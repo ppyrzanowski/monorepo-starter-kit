@@ -1,8 +1,8 @@
 /* LIBRARIES */
 import { Stripe } from "stripe"
-import { stripeSubscriptionEvents } from "./events";
-import { stripe } from "./stripe";
-import { findFreePlan, findPlanByStripeId } from "./plans";
+import { stripeSubscriptionEvents } from "./events.js";
+import { stripe } from "./stripe.js";
+import { findFreePlan, findPlanByStripeId } from "./plans.js";
 import { 
   getUserInformationByCustomerId,
   updateSubscriptionInformationByUserId

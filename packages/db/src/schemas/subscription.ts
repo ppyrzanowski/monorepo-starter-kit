@@ -7,7 +7,7 @@ import {
   timestamp,
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
-import { user } from "../schemas/auth";
+import { user } from "@/schemas/auth";
 
 export const subscription = pgTable("subscription", {
   id: uuid("id").primaryKey().defaultRandom(),
