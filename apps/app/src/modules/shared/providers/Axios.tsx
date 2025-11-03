@@ -6,12 +6,12 @@ import AxiosAPI from "axios";
 import toast from "react-hot-toast";
 
 /* APP */
-import { config } from "config";
+import { config } from "@monorepo/config";
 
 
 const axios = AxiosAPI.create({
   baseURL: config.url.api,
-  headers: { 
+  headers: {
     'Content-Type': 'application/json',
     // Clean the axios cache by default
     'Cache-Control': 'no-cache',
@@ -43,7 +43,7 @@ axios.interceptors.response.use(
       console.log(error?.response)
       toast.error("The session is expired, please log in to continue");
     }
-    
+
     return Promise.reject(error?.response || error?.message);
   }
 );

@@ -1,5 +1,5 @@
 {
-  "name": "application",
+  "name": "monorepo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,14 +8,15 @@
     "dev:app": "pnpm turbo --filter app dev",
     "dev:api": "pnpm turbo --filter api dev",
     "dev": "pnpm turbo dev",
-    "better-auth:generate": "pnpm dlx @better-auth/cli@latest generate --config packages/auth/server.ts --output packages/db/src/schemas/auth.ts",
-    "better-auth:migrate": "pnpm dlx @better-auth/cli@latest migrate --config packages/auth/server.ts --output packages/db/src/schemas/auth.ts",
+    "better-auth:generate": "pnpm dlx @better-auth/cli@latest generate --config packages/auth/server.ts --output packages/database/src/schemas/auth.ts",
+    "better-auth:migrate": "pnpm dlx @better-auth/cli@latest migrate --config packages/auth/server.ts --output packages/database/src/schemas/auth.ts",
     "build": "pnpm turbo build",
-    "build:app": "pnpm turbo --filter app build",
+    "build:app": "pnpm turbo --filter @monorepo/app build",
     "build:api": "pnpm turbo --filter api build"
   },
   "devDependencies": {
     "@types/node": "^24.0.13",
-    "turbo": "^2.5.4"
+    "turbo": "^2.5.4",
+    "typescript": "^5.9.3"
   }
 }

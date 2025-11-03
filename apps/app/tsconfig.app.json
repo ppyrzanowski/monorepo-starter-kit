@@ -1,4 +1,5 @@
 {
+//  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2022",
@@ -22,13 +23,19 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    
+
     /* Paths */
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
       "@/*": ["./src/modules/*"],
+      "auth/*": ["../../packages/auth/src/*"]
     }
   },
+  "references": [
+    { "path": "../../packages/config" },
+    { "path": "../../packages/auth" },
+    { "path": "../../packages/database"}
+  ],
   "include": ["src"]
 }

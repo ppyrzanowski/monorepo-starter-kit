@@ -16,3 +16,4 @@ export const config = {
     billing: '/settings/billing'
   }
 } 
+

@@ -1,12 +1,12 @@
 /* LIBRARIES */
 import { Stripe } from "stripe"
-import { stripeSubscriptionEvents } from "./events";
-import { stripe } from "./stripe";
-import { findFreePlan, findPlanByStripeId } from "./plans";
+import { stripeSubscriptionEvents } from "./events.js";
+import { stripe } from "./stripe.js";
+import { findFreePlan, findPlanByStripeId } from "./plans.js";
 import { 
   getUserInformationByCustomerId,
   updateSubscriptionInformationByUserId
-} from "db";
+} from "@monorepo/database";
 
 //SUBSCRIPTION
 const subscriptionActions = async ( { event } : { event: Stripe.Event } ) => {

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 /* LIBRARIES */
-import { authClient } from "auth/client"
+import { authClient } from "@monorepo/auth/client"
 import { useNavigate } from "@tanstack/react-router";
 import { toast } from "react-hot-toast";
 
@@ -16,7 +16,7 @@ export const useAuthActions = () => {
   const navigate = useNavigate();
 
   const signInFn = async ( data: { email: string, password: string }) => {
-    
+
     await authClient.signIn.email ({
       email: data.email,
       password: data.password,
@@ -30,11 +30,11 @@ export const useAuthActions = () => {
         toast.error(err.error.message);
       }
     })
-  
+
   }
-  
+
   const signUpFn = async (data: { email: string, password: string }) => {
-  
+
     await authClient.signUp.email ({
       email: data.email,
       password: data.password,
@@ -51,7 +51,7 @@ export const useAuthActions = () => {
         console.log("Cannot signup with those credentials");
       },
     })
-  
+
   }
 
   const googleFn = async () => {
@@ -69,9 +69,9 @@ export const useAuthActions = () => {
       },
     })
   }
-  
+
   const signOutFn = async () => {
-  
+
     await authClient.signOut({},{
       onSuccess: () => {
         toast.success("Come back soon 👋");
@@ -82,7 +82,7 @@ export const useAuthActions = () => {
         toast.error(err.error.message);
       }
     })
-  
+
   }
 
   const updateNameFn = async ( name: string ) => {
@@ -111,9 +111,9 @@ export const useVerificationEmail = () => {
 
   useEffect(() => {
     if(session.data?.user){
-      authClient.sendVerificationEmail({ 
-        email: session.data.user.email, 
-        callbackURL: `${window.location.origin}/` 
+      authClient.sendVerificationEmail({
+        email: session.data.user.email,
+        callbackURL: `${window.location.origin}/`
       })
     }
   }, [session])

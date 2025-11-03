@@ -1,13 +1,20 @@
 {
-  "name": "validator",
-  "version": "1.0.0",
+  "name": "@monorepo/validator",
+  "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
   "dependencies": {
     "express": "catalog:",
     "neverthrow": "^8.2.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@types/express": "catalog:"
+    "@types/express": "catalog:",
+    "typescript": "^5.8.3"
   }
 }

@@ -4,16 +4,16 @@ import { betterAuth } from "better-auth";
 import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { admin } from "better-auth/plugins"
-import { 
-  db, 
-  createOrUpdateUserToFreePlan, 
+import {
+  db,
+  createOrUpdateUserToFreePlan,
   verification,
   account,
   session,
   user
-} from "db";
-import { config } from "config";
-import { AppError } from "validator";
+} from "@monorepo/database";
+import { config } from "@monorepo/config";
+import { AppError } from "@monorepo/validator";
 
 export const auth = betterAuth({
   database: drizzleAdapter( db , {
@@ -50,7 +50,7 @@ export const auth = betterAuth({
       }
     },
   },
-  trustedOrigins: [ 
+  trustedOrigins: [
     process.env.FRONTEND_URL ?? '',
   ],
   appName: process.env.APP_NAME ?? '',
@@ -58,11 +58,11 @@ export const auth = betterAuth({
     cookiePrefix: config.auth.cookiePrefix
   },
   plugins:[
-    admin({ 
-      defaultRole: "user" 
+    admin({
+      defaultRole: "user"
     })
   ],
-}) 
+})
 
 interface IUserBetterAuth {
   id: string,
@@ -72,19 +72,19 @@ interface IUserBetterAuth {
 
 export const authHandler = toNodeHandler(auth);
 
-export const authentication = async ( 
+export const authentication = async (
   req: Request,
   plugins:  (( user: IUserBetterAuth ) => Promise<void> | void)[] = []
 ) => {
-    
+
   const session = await auth.api.getSession({
     headers: fromNodeHeaders(req.headers),
   })
 
   if(!session || !session.user) {
 
-    throw new AppError( 
-      "unauthorized" , 
+    throw new AppError(
+      "unauthorized" ,
       'Please sign in to access the resource. You are not authorized! To continue, please sign in first'
     );
 
@@ -95,9 +95,10 @@ export const authentication = async (
       await plugin(session.user);
     }
   }
-  
+
   return {
     user: session.user
   };
 
 }
+

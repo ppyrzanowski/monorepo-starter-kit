@@ -1,36 +1,38 @@
 {
-  "name": "api",
+  "name": "@monorepo/api",
   "private": true,
   "version": "1.0.0",
   "scripts": {
     "migrate": "dotenv -e .env -- pnpm --filter db run migrate",
     "generate": "pnpm --filter db run generate",
-    "watch": "tsx watch --env-file=.env index.ts",
+    "watch": "tsx watch --env-file=.env src/index.ts",
     "dev": "pnpm run generate && concurrently \"pnpm run migrate\" \"pnpm run watch\"",
-    "build": "pnpm run generate && pnpm run migrate && tsx index.ts",
+    "build": "tsc -b && tsc-alias -p tsconfig.json",
+    "start": "node dist/index.js",
     "email:dev": "email dev"
   },
   "engines": {
     "node": "24.3.0"
   },
   "dependencies": {
-    "auth": "workspace:*",
+    "@monorepo/auth": "workspace:*",
+    "@monorepo/config": "workspace:*",
+    "@monorepo/database": "workspace:*",
+    "@monorepo/stripe": "workspace:*",
+    "@monorepo/validator": "workspace:*",
     "body-parser": "^1.20.3",
     "concurrently": "catalog:",
-    "config": "workspace:*",
     "cors": "^2.8.5",
-    "db": "workspace:*",
     "dotenv-cli": "^8.0.0",
     "express": "catalog:",
     "helmet": "^8.0.0",
-    "stripe": "workspace:*",
-    "tsx": "^4.19.3",
-    "validator": "workspace:*"
+    "tsx": "^4.19.3"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.6",
     "@types/cors": "^2.8.17",
     "@types/express": "catalog:",
+    "tsc-alias": "^1.8.10",
     "typescript": "^5.8.3"
   }
 }

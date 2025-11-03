@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
-import { db } from "../db";
-import { subscription } from "../schemas/subscription";
-import { user } from "../schemas/auth";
+import { db } from "../db.js";
+import { subscription } from "../schemas/subscription.js";
+import { user } from "../schemas/auth.js";
 
 
 export const createOrUpdateUserToFreePlan = async ( userId: string ) => {
@@ -67,8 +67,8 @@ export const getUserInformationByCustomerId = async ( customerId: string ) => {
   }
 }
 
-export const updateSubscriptionInformationByUserId = async ( 
-  userId: string, 
+export const updateSubscriptionInformationByUserId = async (
+  userId: string,
   data: {
     /* Optional attributes */
     planId?: string,
@@ -78,7 +78,7 @@ export const updateSubscriptionInformationByUserId = async (
     billingCycleEnd?: number | null,
     cancelAtPeriodEnd?: boolean | null,
     subscriptionId?: string | null,
-  } 
+  }
 ) => {
   await db
     .update(subscription)

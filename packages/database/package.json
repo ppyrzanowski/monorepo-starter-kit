@@ -1,8 +1,12 @@
 {
-  "name": "db",
-  "version": "1.0.0",
+  "name": "@monorepo/database",
+  "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "studio": "drizzle-kit studio --port=8082",
     "generate" : "drizzle-kit generate",
     "migrate" : "drizzle-kit migrate"
@@ -13,6 +17,7 @@
   },
   "devDependencies": {
     "@types/pg": "^8.15.4",
-    "drizzle-kit": "^0.31.4"
+    "drizzle-kit": "^0.31.4",
+    "typescript": "^5.8.3"
   }
 }

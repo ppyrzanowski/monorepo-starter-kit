@@ -1,15 +1,30 @@
 {
-  "name": "auth",
-  "version": "1.0.0",
+  "name": "@monorepo/auth",
+  "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "default": "./dist/server.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
   "dependencies": {
+    "@monorepo/config": "workspace:*",
+    "@monorepo/database": "workspace:*",
+    "@monorepo/validator": "workspace:*",
     "express": "catalog:",
-    "better-auth": "^1.2.12",
-    "config": "workspace:*",
-    "db": "workspace:*",
-    "validator": "workspace:*"
+    "better-auth": "^1.2.12"
   },
   "devDependencies": {
-    "@types/express": "catalog:"
+    "@types/express": "catalog:",
+    "typescript": "^5.8.3"
   }
 }
