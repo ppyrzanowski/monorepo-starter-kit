@@ -1,5 +1,5 @@
 {
-  "name": "stripe",
+  "name": "@monorepo/stripe",
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
@@ -9,9 +9,9 @@
     "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "stripe": "^18.3.0",
-    "config": "workspace:*",
-    "db": "workspace:*"
+    "@monorepo/config": "workspace:*",
+    "@monorepo/db": "workspace:*",
+    "stripe": "^18.3.0"
   },
   "devDependencies": {
     "typescript": "^5.8.3"

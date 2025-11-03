@@ -1,5 +1,5 @@
 {
-  "name": "auth",
+  "name": "@monorepo/auth",
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
@@ -17,11 +17,11 @@
     "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
+    "@monorepo/config": "workspace:*",
+    "@monorepo/db": "workspace:*",
+    "@monorepo/validator": "workspace:*",
     "express": "catalog:",
-    "better-auth": "^1.2.12",
-    "config": "workspace:*",
-    "db": "workspace:*",
-    "validator": "workspace:*"
+    "better-auth": "^1.2.12"
   },
   "devDependencies": {
     "@types/express": "catalog:",

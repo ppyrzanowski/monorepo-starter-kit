@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "@monorepo/api",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -15,18 +15,18 @@
     "node": "24.3.0"
   },
   "dependencies": {
-    "auth": "workspace:*",
+    "@monorepo/auth": "workspace:*",
+    "@monorepo/config": "workspace:*",
+    "@monorepo/db": "workspace:*",
+    "@monorepo/stripe": "workspace:*",
+    "@monorepo/validator": "workspace:*",
     "body-parser": "^1.20.3",
     "concurrently": "catalog:",
-    "config": "workspace:*",
     "cors": "^2.8.5",
-    "db": "workspace:*",
     "dotenv-cli": "^8.0.0",
     "express": "catalog:",
     "helmet": "^8.0.0",
-    "stripe": "workspace:*",
-    "tsx": "^4.19.3",
-    "validator": "workspace:*"
+    "tsx": "^4.19.3"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.6",

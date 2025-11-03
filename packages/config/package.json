@@ -1,5 +1,5 @@
 {
-  "name": "config",
+  "name": "@monorepo/config",
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
