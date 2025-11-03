@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@monorepo/config": "workspace:*",
-    "@monorepo/db": "workspace:*",
+    "@monorepo/database": "workspace:*",
     "@monorepo/validator": "workspace:*",
     "express": "catalog:",
     "better-auth": "^1.2.12"

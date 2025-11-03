@@ -6,8 +6,8 @@ import type { Express } from "express"
 import cors from "cors"
 import helmet from "helmet"
 import bodyParser from "body-parser"
-import { authHandler } from "auth/server"
-import { errorHandler } from "validator"
+import { authHandler } from "@monorepo/auth/server"
+import { errorHandler } from "@monorepo/validator"
 
 /* APP */
 import { BodyParser } from "./lib/bodyParser.js"

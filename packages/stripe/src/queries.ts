@@ -1,5 +1,5 @@
 /* APP */
-import { createCustomerIdByUserId, getUserInformationByUserId } from "db"
+import { createCustomerIdByUserId, getUserInformationByUserId } from "@monorepo/database"
 import { stripe } from "./stripe.js";
 
 export const createOrGetCustomerIdByUserId = async ( userId: string ) => {

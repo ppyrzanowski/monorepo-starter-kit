@@ -1,5 +1,5 @@
 import { stripe } from "./stripe.js";
-import { config } from "config";
+import { config } from "@monorepo/config";
 
 export const checkout = async ( { priceId, customerId } : { priceId: string, customerId: string } ) => {
   return await stripe.checkout.sessions.create({

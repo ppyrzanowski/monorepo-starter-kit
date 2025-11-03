@@ -7,7 +7,7 @@ import { Outlet } from "@tanstack/react-router"
 
 /* APP */
 import { useKillAppData } from "@/shared/hooks/useKillAppData"
-import { config } from "config"
+import { config } from "@monorepo/config"
 
 /* COMPONENT */
 export const AuthLayout = () => {
@@ -16,7 +16,7 @@ export const AuthLayout = () => {
   useEffect(() => {
     killData();
   }, [killData])
-  
+
 
   return (
     <main className="relative h-screen grid place-content-center px-2">

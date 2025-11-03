@@ -1,10 +1,10 @@
 /* LIBRARIES */
 import { Request, Response } from "express"
 /* APP */
-import { userSchema } from "validator"
-import {authentication} from "auth/server";
-import { safeDbPromise, validatorDTO } from "validator"
-import { updateUserInformationByUserId } from "db"
+import { userSchema } from "@monorepo/validator"
+import {authentication} from "@monorepo/auth/server";
+import { safeDbPromise, validatorDTO } from "@monorepo/validator"
+import { updateUserInformationByUserId } from "@monorepo/database"
 
 export const updateName = async ( req: Request, res: Response ) => {
 

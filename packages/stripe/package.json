@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@monorepo/config": "workspace:*",
-    "@monorepo/db": "workspace:*",
+    "@monorepo/database": "workspace:*",
     "stripe": "^18.3.0"
   },
   "devDependencies": {

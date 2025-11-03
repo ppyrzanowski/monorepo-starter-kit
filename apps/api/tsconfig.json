@@ -19,7 +19,7 @@
       "#/emails/*": ["./emails/*"],
       "@/controller/*": ["./src/controller/*"],
       "@/routes/*": ["./src/routes/*"],
-      "auth/*": ["../../packages/auth/src/*"]
+      "@monorepo/auth/*": ["../../packages/auth/src/*"]
     }
   },
   "include": ["src/**/*.ts"],
@@ -27,7 +27,7 @@
   "references": [
     { "path": "../../packages/auth" },
     { "path": "../../packages/config" },
-    { "path": "../../packages/db" },
+    { "path": "../../packages/database"},
     { "path": "../../packages/stripe" },
     { "path": "../../packages/validator" }
   ]

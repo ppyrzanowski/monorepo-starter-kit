@@ -4,7 +4,7 @@ import { LogOut } from "lucide-react";
 import { Card, CardContent, CardHeader } from "~/shadcn/ui/card";
 import { Button } from "~/shadcn/ui/button";
 /* APP */
-import { config } from "config";
+import { config } from "@monorepo/config";
 import { useAuthActions, useSession, useVerificationEmail } from "../hooks/useAuth"
 
 export default function VerifyEmailPage() {
@@ -52,4 +52,4 @@ export default function VerifyEmailPage() {
   )
 
 
-} 
+}

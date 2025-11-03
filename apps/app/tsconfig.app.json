@@ -35,7 +35,7 @@
   "references": [
     { "path": "../../packages/config" },
     { "path": "../../packages/auth" },
-    { "path": "../../packages/db" }
+    { "path": "../../packages/database"}
   ],
   "include": ["src"]
 }

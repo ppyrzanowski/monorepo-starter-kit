@@ -17,7 +17,7 @@
   "dependencies": {
     "@monorepo/auth": "workspace:*",
     "@monorepo/config": "workspace:*",
-    "@monorepo/db": "workspace:*",
+    "@monorepo/database": "workspace:*",
     "@monorepo/stripe": "workspace:*",
     "@monorepo/validator": "workspace:*",
     "body-parser": "^1.20.3",

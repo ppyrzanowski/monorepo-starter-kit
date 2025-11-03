@@ -11,7 +11,7 @@
   "exclude": ["node_modules", "dist"],
   "references": [
     { "path": "../config" },
-    { "path": "../db" },
+    { "path": "../database"},
     { "path": "../validator" }
   ]
 }

@@ -1,5 +1,6 @@
-import { config } from "config";
 import { stripe } from "./stripe.js";
+import {config} from "@monorepo/config"
+
 
 export const getBillingPortalByCustomerId = async ( customerId: string ) => {
   return await stripe.billingPortal.sessions.create(

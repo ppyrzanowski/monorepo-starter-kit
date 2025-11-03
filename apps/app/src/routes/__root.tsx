@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { Branding } from '@/shared/components/Branding'
-import { config } from 'config'
+import { config } from '@monorepo/config'
 
 export const Route = createRootRoute({
   component: RootComponent,
