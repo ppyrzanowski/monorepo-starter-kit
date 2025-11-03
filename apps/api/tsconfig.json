@@ -3,7 +3,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "composite": true,
-    "rootDir": ".",
+    "rootDir": "./src",
     "outDir": "dist",
     "preserveWatchOutput": true,
     "typeRoots": ["./types"],
@@ -13,7 +13,8 @@
       "~/utils/*": ["./src/utils/*"],
       "#/emails/*": ["./emails/*"],
       "@/controller/*": ["./src/controller/*"],
-      "@/routes/*": ["./src/routes/*"]
+      "@/routes/*": ["./src/routes/*"],
+      "auth/*": ["../../packages/auth/src/*"]
     }
   },
   "include": ["src/**/*.ts"],

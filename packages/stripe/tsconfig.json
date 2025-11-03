@@ -8,6 +8,11 @@
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"],
+  "baseUrl": ".",
+  "paths": {
+    "config": ["../config/src/*"],
+    "db": ["../db/src/*"]
+  },
   "references": [
     { "path": "../config" },
     { "path": "../db" }

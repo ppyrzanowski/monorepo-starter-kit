@@ -29,6 +29,7 @@
     "paths": {
       "~/*": ["./src/*"],
       "@/*": ["./src/modules/*"],
+      "auth/*": ["../../packages/auth/src/*"]
     }
   },
   "references": [
